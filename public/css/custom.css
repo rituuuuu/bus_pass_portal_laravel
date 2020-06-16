@@ -1,0 +1,653 @@
+.custom_field{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.form_head{
+  margin: 10px;
+}
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFBE6;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #202020;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar  {
+    padding: 18px 13px;
+    background: #521a1a;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: inherit;
+    border-bottom: 1px double;
+}
+.navbar-right{
+    font-size: 14px;
+}
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+i, span {
+    display: inline-block;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: url(../css/images/sidebar-images.jpg) right repeat-y;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+    display: none;
+}
+
+#sidebar.active .sidebar-header strong {
+    display: block;
+}
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+    margin-right:  0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+    top: auto;
+    bottom: 5px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar .sidebar-header{
+    padding: 15px;
+    background-color: #100101;
+    color: white;
+    opacity: 70%;
+}
+
+#sidebar .sidebar-header strong {
+    display: none;
+    font-size: 1.8em;
+}
+
+#sidebar ul.components {
+    border-bottom: 1px solid #181818;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #181818;
+    background: #fff;
+    border-radius: 15px;
+}
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background:rgb(66, 56, 56);
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #69432C;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #202020;
+}
+
+a.article, a.article:hover {
+    background: #cc6d8d !important;
+    color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    flex-grow: 1;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important ;
+    }
+    a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+    #sidebar.active {
+        margin-left: 0 !important;
+    }
+
+    #sidebar .sidebar-header h3, #sidebar .CTAs {
+        display: none;
+    }
+
+    #sidebar .sidebar-header strong {
+        display: block;
+    }
+
+    #sidebar ul li a {
+        padding: 20px 10px;
+    }
+
+    #sidebar ul li a span {
+        font-size: 0.85em;
+    }
+    #sidebar ul li a i {
+        margin-right:  0;
+        display: block;
+    }
+
+    #sidebar ul ul a {
+        padding: 10px !important;
+    }
+
+    #sidebar ul li a i {
+        font-size: 1.3em;
+    }
+    #sidebar {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+th {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+td {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.field_edit{
+  margin-left: 0px;
+    margin-right: -57px;
+}
+
+.studentType{
+  display: none;
+}
+.staffType{
+  display: none;
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .card {
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-height: 80px;
+    width: 285px;
+    background-color: #FFF7CC;
+    opacity: 99%;
+}
+.card-icon{
+    height: 65px;
+}
+.card-heading
+{
+    font-size: 19px;
+    padding: 24px 0px 0px 2px;
+    font-family: inherit;
+}
+.card-row
+{
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-height: 80px;
+    width: 285px;
+    background-color: #FFF7CC;
+    opacity: 99%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+  
+  .card span.card-title {
+    color: black;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  .card .card-image {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 39px;
+  }
+  
+  .card .card-image img {
+    background-clip: padding-box;
+    position: relative;
+    z-index: -1;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+  }
+  
+  .card .card-image span.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+  }
+  
+  .card .card-content {
+    padding: 16px;
+    border-radius: 0 0 2px 2px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .card .card-content p {
+    margin: 0;
+    color: inherit;
+  }
+  
+  .card .card-content span.card-title {
+    line-height: 48px;
+  }
+  
+  .card .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 16px;
+  }
+  
+  .card .card-action a {
+    color: black;
+    margin-right: 16px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .card .card-action a:hover {
+    color: #404040;
+    text-decoration: none;
+  }
+  .card-formatter{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  
+.card-header {
+    border: antiquewhite;
+    font-size: 21px;
+    padding: 6px 35px;
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: #423838;
+    color: wheat;
+    margin-bottom: 35px;
+}
+.card-span{
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+.form-control {
+    margin-left: 79px;
+    display: block;
+    width: 41%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+
+.form-content{
+    margin-top: 20px;
+}
+.form-button{
+    margin-left: 20px;
+    
+}
+
+.alert-danger {
+    color: #a94442;
+    padding: 11px 114px 10px 22px;
+    display: contents;
+}
+
+.success-card{
+    margin-bottom: 32px;
+    margin-left: 0px;
+    color: white;
+    background-color: #33FF19;
+    padding: 9px 0px 7px 39px;
+}
+.qr-code  {
+    color: grey;
+    border: 1px solid;
+    box-shadow: 0 38px 43px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: -webkit-fill-available;
+}
+
+.user-name{
+    color: grey;
+    font-size: 54px;
+    font-style: normal;
+}
+
+.user-dates{
+    color: currentColor;
+    font-size: 1.5rem;
+    margin-top: 27px;
+}
+
+.other-details{
+    color: #808080;
+    font-size: 3rem;
+}
+.user-email{
+    font-size: 1.7rem;
+    color: slategrey;
+    margin-top: 13px;
+}
+
+.card .title {
+    margin: 0;
+    color: #333333;
+    font-weight: 300;
+}
+
+
+.table-header{
+    border-bottom-width: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #9A9A9A;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: black;
+    border-color: #020202;
+}
+
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: gray;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    color: white;
+    background-color: #472F1E;
+    border-radius: 5px;
+}
+
+.tab-header{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: darkgrey;
+    padding: 4px 0px 4px 16px;
+}
+
+.icons-img{
+    vertical-align: middle;
+    width: 26px;
+}
+
+.front-icon{
+    color: red;
+}
+
+.modal-header .close{
+    margin-top: -2px;
+    color: white;
+}
+
+.card-image{
+    margin: inherit;
+}
+
+.data-description{
+    margin-top: 37px;
+}
+.image-card{
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-height: 80px;
+    width: 285px;
+    background-color: #FFF7CC;
+    opacity: 99%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.img-bus{
+        margin-top: 10px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        background-clip: padding-box;
+        min-height: 80px;
+        background-color: #FFF7CC;
+        opacity: 99%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        padding-top: 16px;
+        padding-bottom: 16px;
+}
+.bus-para {
+    margin-top: 12px;
+    padding: 19px 23px 127px 21px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: antiquewhite;
+}
+.date{
+    margin-left: 11px;
+    width: 19%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.student-info{
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background-clip: padding-box;
+    min-height: 80px;
+    width: 100%;
+    background-color: #fffdf2;
+    opacity: 99%;
+    padding: 21px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.student-image  {
+    /* width: 21%; */
+    color: red;
+    border: 2px solid;
+    border-radius: 20px;
+    background: white;
+    height: 214px;
+}
+.student-data{
+    font-size: 30px;
+}
